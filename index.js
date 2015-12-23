@@ -58,7 +58,7 @@ function createResponsePayload(requestBody) {
     if (!requestBody) {
         return createError('Request is empty');
     }
-   console.log(requestBody);
+   
     var text = requestBody.text;
     var command = requestBody.command;
 
