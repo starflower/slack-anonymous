@@ -8,6 +8,7 @@ var http = require("http");
 var interval = setInterval(function() {
     var date = new Date();
     var current_hour = date.getHours();
+    console.log('ping');
     if(current_hour >= 4 && current_hour <= 22) {
         http.get("http://anonymousslack.herokuapp.com");   
     } else {
