@@ -10,7 +10,7 @@ var interval = setInterval(function() {
     var current_hour = date.getHours();
     console.log('ping');
     console.log(current_hour);
-    if(current_hour >= 2 && current_hour <= 20) {
+    if(current_hour >= 3 && current_hour <= 21) {
         http.get("http://anonymousslack.herokuapp.com");   
     } else {
         clearInterval(interval);
