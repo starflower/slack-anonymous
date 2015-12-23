@@ -3,6 +3,18 @@ var app = express();
 var bodyParser = require('body-parser');
 var request = require('request');
 
+var http = require("http");
+
+var interval = setInterval(function() {
+    var date = new Date();
+    var current_hour = date.getHours();
+    if(current_hour >= 4 && current_hour <= 22) {
+        http.get("http://anonymousslack.herokuapp.com");   
+    } else {
+        clearInterval(interval);
+    }
+}, 300000); // every 5 minutes (300000)
+
 app.set('port', (process.env.PORT || 5000));
 
 app.use(express.static(__dirname + '/public'));
